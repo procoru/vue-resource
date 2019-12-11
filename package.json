@@ -22,7 +22,9 @@
   "scripts": {
     "test": "webpack --config test/webpack.config.js",
     "build": "node build/build.js",
-    "release": "node build/release.js"
+    "release": "node build/release.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -31,12 +33,16 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-es2015-loose-rollup": "^7.0.0",
     "generate-release": "^0.10.1",
-    "jasmine-core": "^2.5.0",
-    "replace-in-file": "^2.0.1",
+    "jasmine-core": "^3.1.0",
+    "replace-in-file": "^3.1.1",
     "rollup": "^0.34.13",
     "rollup-plugin-babel": "^2.6.1",
     "uglify-js": "^2.7.3",
-    "vue": "^1.0.26",
+    "vue": "^2.5.17",
     "webpack": "2.1.0-beta.21"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.258.1"
   }
 }
