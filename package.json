@@ -22,7 +22,9 @@
   "scripts": {
     "test": "webpack --config test/webpack.config.js",
     "build": "node build/build.js",
-    "release": "node build/release.js"
+    "release": "node build/release.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -38,5 +40,9 @@
     "uglify-js": "^2.7.3",
     "vue": "^1.0.26",
     "webpack": "2.1.0-beta.21"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
   }
 }
